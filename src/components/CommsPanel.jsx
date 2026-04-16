@@ -54,7 +54,23 @@ const CommsPanel = () => {
       </div>
       
               
-        
+           {/* Log */}
+      <div className="flex-grow bg-black/50 border border-[var(--retro-green)]/20 rounded p-2.5 overflow-y-auto font-mono text-[12.5px] flex flex-col gap-1 min-h-0">
+        {messages.length === 0 ? (
+          <p className="text-[var(--retro-green)]/20 italic text-center m-auto text-xs">
+            — Sin transmisiones —
+          </p>
+        ) : (
+          messages.map((msg, idx) => (
+            <div key={idx} className={`flex gap-1.5 leading-relaxed ${TYPE_STYLES[msg.type]}`}>
+              <span className="opacity-50 shrink-0">{'>'}</span>
+              <span>{msg.text}</span>
+            </div>
+          ))
+        )}
+        <div ref={logEndRef} />
+      </div>
+ 
       {/* Controles para añadir / limpiar mensajes van aquí */}
     </div>
   );
