@@ -15,7 +15,7 @@
    - Cada miembro debe crear una **rama independiente** para trabajar en su componente asignado: `git checkout -b feature/nombre-del-componente`.
    - Modifiquen el componente para mostrar la información del panel requerida. Recuerden agregar estilos.
    - Una vez listo, hagan un `commit` y suban la rama: `git push origin feature/nombre-del-componente`.
-   - Abran un **Pull Request (PR)** hacia la rama principal (`main` o `master`).
+   - Abran un **Pull Request (PR)** hacia la rama principal (`develop`).
 
 
 ## 🎨 Documentación y Sistema de Diseño (CSS)
