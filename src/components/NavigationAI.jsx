@@ -3,8 +3,11 @@ import { useState } from 'react';
 const NavigationAI = () => {
   const [inputVal, setInputVal] = useState('');
   const [response, setResponse] = useState('');
-
-  //TODO: Crear un chatbot básico que responda "Hola Capitán" a cualquier mensaje recibido al enviar (submit o botón).
+  const handleSend = (e) => {
+  e?.preventDefault?.();
+  setResponse('Hola Capitán');
+  setInputVal('');
+};
 
   return (
     <div className="glass-card flex flex-col h-full">
@@ -19,10 +22,13 @@ const NavigationAI = () => {
           type="text" 
           value={inputVal}
           onChange={(e) => setInputVal(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') handleSend(e);
+          }}
           placeholder="Comando..."
           className="flex-grow bg-gray-900 border border-gray-700 rounded px-2 py-1 text-sm font-mono text-white outline-none focus:border-[var(--neon-blue)]"
         />
-        {/* Agrega tu botón de enviar aquí para disparar la respuesta */}
+        {/* Agrega tu botónsdsdsd de enviar aquí para disparar la respuesta .*/}
       </div>
     </div>
   );
