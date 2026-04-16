@@ -22,7 +22,15 @@ const NavigationAI = () => {
           placeholder="Comando..."
           className="flex-grow bg-gray-900 border border-gray-700 rounded px-2 py-1 text-sm font-mono text-white outline-none focus:border-[var(--neon-blue)]"
         />
-        {/* Agrega tu botón de enviar aquí para disparar la respuesta */}
+        <button 
+          onClick={() => {
+            setResponse("Enviar");
+            setInputVal('');
+          }}
+          className="bg-[var(--neon-blue)] text-black px-4 py-1 rounded text-sm font-bold hover:bg-[var(--neon-blue-hover)] transition-colors"
+        >
+          Enviar
+        </button>
       </div>
     </div>
   );
