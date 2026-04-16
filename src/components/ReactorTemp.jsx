@@ -14,7 +14,7 @@ const ReactorTemp = () => {
     return () => clearInterval(interval);
   }, []);
 
-  //TODO: Renderizar un mensaje de "ALERTA CRÍTICA" en rojo solo si la temperatura es > 100.
+  //TODO: jyjyhnuh un mensaje de "ALERTA CRÍTICA" en rojo solo si la temperatura es > 100.
 
   return (
     <div className="glass-card flex flex-col justify-center items-center h-full">
