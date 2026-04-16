@@ -36,7 +36,7 @@ const ReactorTemp = () => {
 
       <div className="mt-4 h-6 w-full text-center">
         {temp > 100 && (
-          <h2 className="text-xl font-bold text-red-600 mb-2" style={{ textShadow: '0 0 5px rgba(57, 255, 20, 0.4)' }}>ALERTA CRITICA</h2>
+          <h2 className="text-xl font-bold text-red-600 mb-2" style={{ textShadow: '0 0 5px rgba(57, 255, 20, 0.4)' }}>ALERTA CRÍTICA</h2>
         )}
       </div>
     </div>
