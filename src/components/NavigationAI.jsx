@@ -3,6 +3,7 @@ import { useState } from 'react';
 const NavigationAI = () => {
   const [inputVal, setInputVal] = useState('');
   const [response, setResponse] = useState('');
+  
   const handleSend = (e) => {
   e?.preventDefault?.();
   setResponse('Hola Capitán');
