@@ -52,8 +52,8 @@ const CommsPanel = () => {
           {messages.length} MSG
         </span>
       </div>
-      
-              
+
+
            {/* Log */}
       <div className="flex-grow bg-black/50 border border-[var(--retro-green)]/20 rounded p-2.5 overflow-y-auto font-mono text-[12.5px] flex flex-col gap-1 min-h-0">
         {messages.length === 0 ? (
@@ -69,6 +69,37 @@ const CommsPanel = () => {
           ))
         )}
         <div ref={logEndRef} />
+      </div>
+
+      {/* Controles */}
+      <div className="flex gap-2">
+        <div className="relative flex-1">
+          <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[var(--retro-green)]/50 text-xs pointer-events-none">_</span>
+          <input
+            type="text"
+            value={input}
+            onChange={e => setInput(e.target.value)}
+            onKeyDown={e => e.key === 'Enter' && handleSend()}
+            placeholder="Transmitir mensaje..."
+            maxLength={120}
+            className="w-full bg-black/60 border border-[var(--retro-green)]/20 rounded pl-6 pr-3 py-2 text-[var(--retro-green)] font-mono text-[12.5px] outline-none focus:border-[var(--retro-green)]/60 focus:shadow-[0_0_12px_rgba(57,255,20,0.12)] placeholder:text-[var(--retro-green)]/20 transition-all"
+          />
+        </div>
+
+        <button
+          onClick={handleSend}
+          className="px-4 py-2 font-['Orbitron'] text-[9px] font-bold tracking-widest border border-[var(--retro-green)]/50 text-[var(--retro-green)] rounded bg-[var(--retro-green)]/5 hover:bg-[var(--retro-green)]/15 hover:shadow-[0_0_14px_rgba(57,255,20,0.25)] hover:border-[var(--retro-green)] active:scale-95 transition-all"
+        >
+          TX
+        </button>
+
+        <button
+          onClick={handleClear}
+          disabled={messages.length === 0}
+          className="px-4 py-2 font-['Orbitron'] text-[9px] font-bold tracking-widest border border-[var(--emergency-red)]/35 text-[var(--emergency-red)] rounded bg-[var(--emergency-red)]/5 hover:bg-[var(--emergency-red)]/12 hover:shadow-[0_0_12px_rgba(255,51,51,0.2)] hover:border-[var(--emergency-red)] active:scale-95 disabled:opacity-25 disabled:cursor-not-allowed transition-all"
+        >
+          DEL
+        </button>
       </div>
  
       {/* Controles para añadir / limpiar mensajes van aquí */}
