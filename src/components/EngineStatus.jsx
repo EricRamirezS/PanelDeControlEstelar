@@ -12,7 +12,18 @@ const EngineStatus = () => {
         <div className={`w-8 h-8 rounded-full ${isOn ? 'bg-[var(--system-green)] shadow-[0_0_10px_var(--system-green)]' : 'bg-gray-700'}`}></div>
         <span className="text-lg font-mono">{isOn ? 'ENCENDIDO' : 'APAGADO'}</span>
       </div>
-      {/* Añade tu botón de ignición aquí */}
+      
+      <button
+       onClick={() => setIsOn(prev => !prev)}
+       className={`mt-2 px-6 py-3 rounded-full font-mono font-bold tracking-widest uppercase text-sm
+        border-2 transition-all duration-300
+        ${isOn
+          ? 'border-[var(--system-green)] text-[var(--system-green)] shadow-[0_0_15px_var(--system-green)]'
+          : 'border-gray-600 text-gray-400 hover:border-gray-400'
+        }`}
+      > 
+        {isOn ? 'Apagar' : 'Encender'}
+      </button>
     </div>
   );
 };
