@@ -13,7 +13,9 @@ const CargoInventory = () => {
     setInventory(initialInventory);
   }, []);
 
-  //TODO: Implementar un botón que elimine el último elemento del inventario.
+  const removeLastItem = () => {
+    setInventory(prev => prev.slice(0, -1));
+  };
 
   return (
     <div className="glass-card flex flex-col h-full">
@@ -24,7 +26,13 @@ const CargoInventory = () => {
         ))}
       </ul>
       <div className="mt-4 border-t border-gray-700 pt-2">
-        {/* Tu botón para eliminar el último elemento de la lista va aquí */}
+        <button
+          onClick={removeLastItem}
+          disabled={inventory.length === 0}
+          className="w-full px-4 py-2 bg-red-900 hover:bg-red-700 disabled:opacity-40 disabled:cursor-not-allowed text-gray-200 font-mono rounded transition-colors"
+        >
+          Eliminar último elemento
+        </button>
       </div>
     </div>
   );
